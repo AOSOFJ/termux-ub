@@ -228,6 +228,6 @@ async def join_handler(event):
     chat = await event.get_chat()
     await group_call.start(chat.id)
 '''
-app.run_until_disconnected()
+
 
 user.run_until_disconnected()
