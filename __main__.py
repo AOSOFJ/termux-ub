@@ -220,7 +220,7 @@ async def _restart(event):
   await event.edit("**OK**")
   os.system("python termux-ub")
 
-@user,on(events.NewMessage(pattern="\.send",outgoing=True))
+@user.on(events.NewMessage(pattern="\.send",outgoing=True))
 async def send(event):
   try:
     raw = event.raw_text.split(" ")
