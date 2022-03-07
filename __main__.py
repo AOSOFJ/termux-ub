@@ -4,6 +4,7 @@ import asyncio
 from telethon import TelegramClient,events
 from termuxPlug import *
 from collections import deque
+from pytgcalls import GroupCallFactory
 from telethon import __version__ as telever
 from telethon.sessions import StringSession
 from datetime import datetime
@@ -218,7 +219,7 @@ async def _restart(event):
   await event.edit("**OK**")
   os.system("python termux-ub")
  
-group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
+group_call_factory = GroupCallFactory(user, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
 group_call = group_call_factory.get_file_group_call('input')
 
 @user.on(events.NewMessage(outgoing=True, pattern=r'^/join$'))
