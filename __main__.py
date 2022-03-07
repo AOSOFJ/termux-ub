@@ -222,7 +222,7 @@ async def _restart(event):
 group_call_factory = GroupCallFactory(user, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
 group_call = group_call_factory.get_file_group_call('input')
 
-@user.on(events.NewMessage(outgoing=True, pattern=r'^/join$'))
+@user.on(events.NewMessage(outgoing=True, pattern=r'.join'))
 async def join_handler(event):
     chat = await event.get_chat()
     await group_call.start(chat.id)
