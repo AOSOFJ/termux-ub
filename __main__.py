@@ -226,7 +226,7 @@ async def send(event):
   raw = event.raw_text.split(" ")
   victim = raw[1]
   vic = await event.get_reply_message()
-  vicop = vic.from_id
+  vicop = await from_id(event)
   print(vicop)
   await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
   raw = event.raw_text.split("|")
