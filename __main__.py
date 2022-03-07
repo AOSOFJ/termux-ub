@@ -219,7 +219,18 @@ async def spam(event):
 async def _restart(event):
   await event.edit("**OK**")
   os.system("python termux-ub")
- 
+
+@user,on(events.NewMessage(pattern="\.send",outgoing=True))
+async def send(event):
+  try:
+    raw = event.raw_text.split(" ")
+    victim = raw[1]
+  except:
+   await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
+  try:
+    raw = event.raw_text.split("|")
+    message = raw[1]
+
 '''group_call_factory = GroupCallFactory(user, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
 group_call = group_call_factory.get_file_group_call('input')
 
