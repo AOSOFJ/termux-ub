@@ -222,6 +222,7 @@ async def _restart(event):
 
 @user.on(events.NewMessage(pattern="\.send",outgoing=True))
 async def send(event):
+  print(event)
   raw = event.raw_text.split(" ")
   victim = raw[1]
   vic = await event.get_reply_message()
