@@ -222,18 +222,14 @@ async def _restart(event):
 
 @user.on(events.NewMessage(pattern="\.send",outgoing=True))
 async def send(event):
-  try:
-    raw = event.raw_text.split(" ")
-    victim = raw[1]
-    vic = await event.get_reply_message().id
-    print(vic)
-  except:
-   await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
-  try:
-    raw = event.raw_text.split("|")
-    message = raw[1]
-  except:
-    await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
+  raw = event.raw_text.split(" ")
+  victim = raw[1]
+  vic = await event.get_reply_message().id
+  print(vic)
+  await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
+  raw = event.raw_text.split("|")
+  message = raw[1]
+  await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
     
 
 '''group_call_factory = GroupCallFactory(user, GroupCallFactory.MTPROTO_CLIENT_TYPE.TELETHON)
