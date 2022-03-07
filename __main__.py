@@ -225,6 +225,8 @@ async def send(event):
   try:
     raw = event.raw_text.split(" ")
     victim = raw[1]
+    vic = event.get_reply_message()id
+    print(vic)
   except:
    await event.edit("**ERROR OCCURRED \n Do : ** ```.send <@username> | <message>```")
   try:
