@@ -154,7 +154,7 @@ async def delit(event):
     toDel = await event.get_reply_message()
     await toDel.delete()
     await event.delete()
-    print(f"{datetime.now()} {id} : del")
+    print(f"{datetime.now()} {id} used : del")
   except:
     await event.edit("**ERROR OCCURRED**")
 
