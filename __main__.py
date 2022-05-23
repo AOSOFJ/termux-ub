@@ -138,7 +138,7 @@ async def alive(event):
   id = event.chat_id
   aliveCaption = f'''
   **{ALIVE_TXT}**
- **Owner : [{ALIVE_NAME}](https://google.com)**
+ **Owner : [{ALIVE_NAME}](https://t.me/Its_py)**
  **Telethon : {telever}**
  **Python : 3.9**
  **BOT: 1.0**
