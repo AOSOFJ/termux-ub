@@ -30,6 +30,7 @@ def editConfig():
   ALIVE_NAME = input("Enter ALIVE NAME [If you want to set this as default press enter]: ")
   ALIVE_TXT = input("Enter ALIVE TEXT [If you want to set this as default press enter]: ")
   ALIVE_PIC = input("Enter ALIVE PIC(link) [If you want to set this as default press enter]: ")
+  ALIVE_LINK = input("Enter ALIVE LINK(your account link): ")
   if ALIVE_NAME == "":
    conFile.write("Owner ")
   else:
@@ -42,6 +43,10 @@ def editConfig():
    conFile.write("https://te.legra.ph/file/03c9b0143d1c222dede47.jpg")
   else:
     conFile.writelines(ALIVE_PIC)
+  if ALIVE_LINK == "":
+    cconFile.write("tg://settings")
+  else:
+    conconFile.writelines(ALIVE_LINK)
   conFile = open("/storage/emulated/0/CONFIG/config.txt", "r")
   conFile = conFile.read()
   conFileALIVE_TXT = open("/storage/emulated/0/CONFIG/ALIVE_TXT.txt")
@@ -106,7 +111,7 @@ conFileS = conFile.split(" ")
 ALIVE_NAME = conFileS[0]
 ALIVE_TXT = conFileALIVE_TXT
 ALIVE_PIC = conFileS[1]
-print(ALIVE_PIC)
+ALIVE_LINK = conFile[2]
 
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
@@ -138,7 +143,7 @@ async def alive(event):
   id = event.chat_id
   aliveCaption = f'''
   **{ALIVE_TXT}**
- **Owner : [{ALIVE_NAME}](https://t.me/Its_py)**
+ **Owner : [{ALIVE_NAME}]({ALIVE_LINK})**
  **Telethon : {telever}**
  **Python : 3.9**
  **BOT: 1.0**
