@@ -113,6 +113,8 @@ ALIVE_TXT = conFileALIVE_TXT
 ALIVE_PIC = conFileS[1]
 ALIVE_LINK = conFile[2]
 
+uid = f"[{ALIVE_NAME}]({ALIVE_LINK})"
+
 user = TelegramClient(StringSession(session), API_ID, API_HASH)
 user.start()
 os.system("clear")
@@ -143,7 +145,7 @@ async def alive(event):
   id = event.chat_id
   aliveCaption = f'''
   **{ALIVE_TXT}**
- **Owner : [{ALIVE_NAME}]({ALIVE_LINK})**
+ **Owner : {uid}**
  **Telethon : {telever}**
  **Python : 3.9**
  **BOT: 1.0**
