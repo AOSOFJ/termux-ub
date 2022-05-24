@@ -120,7 +120,7 @@ user.start()
 os.system("clear")
 print("BOT STARTUP COMPLETE \nDo .hi in any chat \n《---BOT LOG---》")
 
-
+@user.on()
 async def startBot():
   await user.send_message("me","Hello!")
 
